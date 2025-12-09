@@ -1,0 +1,388 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Build Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Prompt": {
+      "main": [
+        [
+          {
+            "node": "Ollama Generate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Generate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create a post1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        []
+      ]
+    },
+    "Create a post": {
+      "main": [
+        [
+          {
+            "node": "Create Tweet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-03T07:35:08.133Z",
+  "id": "ZmNyjw6GWjiiSJb0",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "SF News - AI rewriter for Owlshead",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -624,
+        -304
+      ],
+      "id": "8835f635-3087-46f1-a361-e2bff3ae7a6f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://www.salesforce.com/blog/feed/",
+        "options": {
+          "ignoreSSL": true
+        }
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -336,
+        -304
+      ],
+      "id": "9301b18b-6e08-4e65-83d1-2fc34f3751d7",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "78086624-32db-415a-9900-905b020c72e2",
+              "leftValue": "={{ $json.pubDate }}",
+              "rightValue": "={{ new Date(Date.now() - 24*60*60*1000).toISOString() }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        -304
+      ],
+      "id": "fb44dcd5-0d40-44d0-aba1-18cfb2125ea3",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3ad7caf3-c220-4e23-94c5-2f17dac9c7cc",
+              "name": "custom_prompt",
+              "value": "={{$workflow.parameters.custom_prompt}}",
+              "type": "string"
+            },
+            {
+              "id": "c268651b-a1f9-42ce-87d5-0920138da15d",
+              "name": "article_title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "ee29b89f-a952-4115-a82e-bba5b1c83852",
+              "name": "article_desc",
+              "value": "={{ $json['content:encodedSnippet'] }}",
+              "type": "string"
+            },
+            {
+              "id": "6402cb14-678f-46b7-97c7-dbcb2c003466",
+              "name": "article_link",
+              "value": "={{ $json.link }}",
+              "type": "string"
+            },
+            {
+              "id": "50498148-e71c-45fb-affe-a7cd3989f954",
+              "name": "full_prompt",
+              "value": "=`Review this Salesforce article from a Salesforce Consulting Partner perspective. The goal is to make some reflections using a professional services perspective with its own opinion.   Original: {{$json.article_title}} - {{$json.article_desc}} (link: {{$json.article_link}})  {{$json.custom_prompt}}  Rewrite as an engaging Blop post / LinkedIn publication (max 2000 chars). Add own insights and use relevant hashtags (#Salesforce #Agentforce #AI #Data360), call-to-action. Remove any aspect that would indicate that the content is copied, add comments specifying that its a revision from official salesforce sources and its an opinion. The output must written by the company Owlshead and in the end offer our consulting services and refer to the website https://owlshead.io/ to schedule a conversation.`",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        -112
+      ],
+      "id": "a1037000-698f-4f27-acb2-87575de587c7",
+      "name": "Build Prompt"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "208428dc-c777-4d2b-a37f-6e2246ddefa7",
+              "name": "post_text",
+              "value": "={{ $json.message.content }}",
+              "type": "string"
+            },
+            {
+              "id": "d6ef9e21-7ca7-4c6b-98a7-084c38187014",
+              "name": "original_link",
+              "value": "={{ $('Build Prompt').item.json.article_link }}",
+              "type": "string"
+            },
+            {
+              "id": "1b045475-1a5d-4ceb-bac0-26f080d6aa8c",
+              "name": "post_title",
+              "value": "={{ $('Build Prompt').item.json.article_title }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        -112
+      ],
+      "id": "fce4aee7-78d4-4370-995c-230a2a7fbfc5",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://10.10.10.96:11434/api/chat",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"llama3:latest\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $json.full_prompt }}\"\n    }\n  ],\n  \"stream\": false,\n  \"options\": {\n    \"temperature\": 0.7\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -128,
+        -112
+      ],
+      "id": "207dc105-23cd-4576-8bee-8391a260d65c",
+      "name": "Ollama Generate"
+    },
+    {
+      "parameters": {
+        "chatId": "26402261",
+        "text": "=Artículo obtenido, analizado y refinado. Original Link: {{ $json.original_link }}. Original Title: {{ $json.post_title }}. Contenido: {{ $('Ollama Generate').item.json.message.content }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        304,
+        -112
+      ],
+      "id": "4533dee9-ad6b-4a77-b176-d3c0024bae9d",
+      "name": "Send a text message",
+      "webhookId": "9a409085-ec95-463e-81c5-fd58d2a5bfea",
+      "credentials": {
+        "telegramApi": {
+          "id": "zgQWZHZ2nMs05qtB",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        96,
+        96
+      ],
+      "id": "7aeb8abf-7908-4611-8d3a-3860e6112065",
+      "name": "Create a post",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        112
+      ],
+      "id": "dfbb7a92-f51d-48c8-8ecf-dd0c61f9b6e8",
+      "name": "Create a post1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [
+        304,
+        96
+      ],
+      "id": "0bcc7c07-c4f8-4489-abd5-7c7d056bc27e",
+      "name": "Create Tweet",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        -304
+      ],
+      "id": "65fc5584-b6ca-4c42-aa3a-c5013b690adc",
+      "name": "Limit"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "comedido",
+    "name": "myn8nflows"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-03T07:35:08.135Z",
+      "createdAt": "2025-12-03T07:35:08.135Z",
+      "role": "workflow:owner",
+      "workflowId": "ZmNyjw6GWjiiSJb0",
+      "projectId": "c1ShJVsgvvl3Rwo1"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-03T13:48:31.000Z",
+  "versionId": "86f4f243-2056-4bde-bd73-ac402138c75a"
+}
