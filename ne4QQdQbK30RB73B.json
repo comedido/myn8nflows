@@ -1,0 +1,118 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send email": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-03T17:17:27.962Z",
+  "id": "ne4QQdQbK30RB73B",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Error Handler - Alertas Boletines",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7a369f19-9337-4cc1-9568-39d2795eb283",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "chatId": "26402261",
+        "text": "Error procesando Notificaciones BOE",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "aee536bd-801d-400f-807b-3a1c69325cd1",
+      "name": "Send a text message",
+      "webhookId": "fee7d32f-9f12-4389-b4cd-cc5fb688eb37",
+      "credentials": {
+        "telegramApi": {
+          "id": "zgQWZHZ2nMs05qtB",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "comedido@gmail.com",
+        "toEmail": "mberna@grupoazarbe.com",
+        "subject": "⚠️ Error en workflow Alertas Boletines",
+        "html": "=<h2>Error en el workflow de Alertas Boletines</h2>\n\n<p><strong>Workflow:</strong> {{$json[\"workflow\"][\"name\"]}}</p>\n<p><strong>Execution ID:</strong> {{$json[\"execution\"][\"id\"]}}</p>\n<p><strong>Nodo con error:</strong> {{$json[\"node\"][\"name\"]}}</p>\n<p><strong>Tipo de error:</strong> {{$json[\"execution\"][\"error\"][\"name\"]}}</p>\n<p><strong>Mensaje:</strong> {{$json[\"execution\"][\"error\"][\"message\"]}}</p>\n\n<hr>\n\n<p><strong>Stack trace:</strong></p>\n<pre>{{$json[\"execution\"][\"error\"][\"stack\"]}}</pre>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "0c11b5fc-63d7-4cc6-8058-27bf566e3174",
+      "name": "Send email",
+      "webhookId": "c9c67476-b1fa-4545-8aec-60258cf79d9e",
+      "credentials": {
+        "smtp": {
+          "id": "4kUvfaCBAq90daii",
+          "name": "SMTP account"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "comedido",
+    "name": "myn8nflows"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-03T17:17:27.963Z",
+      "createdAt": "2025-12-03T17:17:27.963Z",
+      "role": "workflow:owner",
+      "workflowId": "ne4QQdQbK30RB73B",
+      "projectId": "c1ShJVsgvvl3Rwo1"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-03T17:21:35.000Z",
+  "versionId": "911621e8-7bb0-4451-ad81-dff86d6f11c1"
+}
