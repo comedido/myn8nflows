@@ -1,0 +1,1093 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "BOE España": {
+      "main": [
+        [
+          {
+            "node": "XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Calcular Rango Fechas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BORM Murcia": {
+      "main": [
+        [
+          {
+            "node": "XML1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML1": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Calcular Rango Fechas": {
+      "main": [
+        [
+          {
+            "node": "BORM Murcia",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BOE España",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BOCM Madrid",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "DOG Galicia",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BOCYL CastillaLeon",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BOPV Pais Vasco",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BOIB Islas Baleares",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BOJA Andalucia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send email": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOCM Madrid": {
+      "main": [
+        [
+          {
+            "node": "XML2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "XML2": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DOG Galicia": {
+      "main": [
+        [
+          {
+            "node": "XML3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML3": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Prompt Para Email AI": {
+      "main": [
+        [
+          {
+            "node": "LLM Inference",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt Para Clasificación AI": {
+      "main": [
+        [
+          {
+            "node": "LLM Inference1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Inference1": {
+      "main": [
+        [
+          {
+            "node": "Tratamiento respesta LLM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Merge Normas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Normas": {
+      "main": [
+        [
+          {
+            "node": "Prompt Para Clasificación AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar HTML Informe": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Métricas Agregadas": {
+      "main": [
+        [
+          {
+            "node": "Generar HTML Informe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOCYL CastillaLeon": {
+      "main": [
+        [
+          {
+            "node": "XML4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML4": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas4": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "BOPV Pais Vasco": {
+      "main": [
+        [
+          {
+            "node": "XML5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML5": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas5": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "BOIB Islas Baleares": {
+      "main": [
+        [
+          {
+            "node": "XML6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML6": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas6": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "BOJA Andalucia": {
+      "main": [
+        [
+          {
+            "node": "XML7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML7": {
+      "main": [
+        [
+          {
+            "node": "BOE Normalizar normas7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BOE Normalizar normas7": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Tratamiento respesta LLM": {
+      "main": [
+        [
+          {
+            "node": "Prompt Para Email AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Inference": {
+      "main": [
+        [
+          {
+            "node": "Métricas Agregadas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-13T11:39:56.425Z",
+  "id": "h83A0mENt2e76aep",
+  "isArchived": true,
+  "meta": null,
+  "name": "Miriam BOE - Alerta Boletines_v2",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://www.boe.es/rss/boe.php",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "aab96fe9-16d4-4dfc-9d95-f03a7c9bafa4",
+      "name": "BOE España"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 10,
+              "triggerAtMinute": 40
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -400,
+        48
+      ],
+      "id": "f416bcea-06fd-410f-bf1c-43f7031dedf4",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "6b96d40a-481e-4d34-9392-f2142e56c606",
+      "name": "XML"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOE',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'ESTADO',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "3bb3b3f9-2f7a-4ba6-9046-e983a3ba2593",
+      "name": "BOE Normalizar normas"
+    },
+    {
+      "parameters": {
+        "url": "https://www.borm.es/rss/boletin.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        0,
+        144
+      ],
+      "id": "9b61372a-2903-4a51-aaec-f417d44a54a5",
+      "name": "BORM Murcia"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        144
+      ],
+      "id": "bb80181a-0e67-4f08-80d2-3f3c72c7824b",
+      "name": "XML1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOM',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'Murcia',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        144
+      ],
+      "id": "bf4a3376-0d15-42ed-b8a7-00fd32ab9f15",
+      "name": "BOE Normalizar normas1"
+    },
+    {
+      "parameters": {
+        "jsCode": "function formatDate(d) {\nconst y = d.getFullYear();\nconst m = String(d.getMonth() + 1).padStart(2, '0');\nconst day = String(d.getDate()).padStart(2, '0');\nreturn `${y}-${m}-${day}`;\n}\n\nconst now = new Date();\nconst hoy = new Date(now);\nconst hace7dias = new Date(now);\nhace7dias.setDate(hoy.getDate() - 15);\n\nreturn [\n{\njson: {\nhoy_iso: hoy.toISOString(),\nhace7dias_iso: hace7dias.toISOString(),\nhoy_str: formatDate(hoy),\nhace7dias_str: formatDate(hace7dias),\n},\n},\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -208,
+        48
+      ],
+      "id": "1b19c7be-ad6f-44c5-8e1d-5f7cae8ab4c1",
+      "name": "Calcular Rango Fechas"
+    },
+    {
+      "parameters": {
+        "url": "https://www.juntadeandalucia.es/servicios/normativas.xml",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "application/xml,text/xml,application/xhtml+xml,application/html;q=0.9,*/*;q=0.8"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "es-ES,es;q=0.9,en;q=0.8"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        16,
+        1232
+      ],
+      "id": "3743ec38-553e-4f82-82dd-f0d828748374",
+      "name": "BOJA Andalucia"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://10.10.10.96:11434/api/chat",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n  {\n    \"model\": \"llama3:latest\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": $json.prompt\n      }\n    ],\n    \"stream\": false,\n    \"options\": {\n      \"temperature\": 0.4,\n      \"num_predict\": 2048\n    }\n  }\n}}",
+        "options": {
+          "timeout": 3600000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1056,
+        192
+      ],
+      "id": "27bbf89d-4632-400b-9993-cd586041f0ee",
+      "name": "LLM Inference"
+    },
+    {
+      "parameters": {
+        "fromEmail": "comedido@gmail.com",
+        "toEmail": "aarondominguezsanchez@gmail.com",
+        "subject": "={{ $json.asunto }} – {{$json.rango_fechas}}",
+        "html": "=<h2 style=\"font-family: Arial, sans-serif; color: #003366; margin-bottom: 4px;\">\n  Informe Jurídico Semanal\n</h2>\n\n<p style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333;\">\n  Estimados/as,<br><br>\n  Adjuntamos el informe semanal con un análisis detallado de las principales novedades legislativas publicadas en los boletines oficiales.\n  El informe cubre el período\n  <strong>{{$json.rango_fechas}}</strong>\n  y se ha elaborado a partir de los siguientes diarios oficiales:\n</p>\n\n<ul style=\"font-family: Arial, sans-serif; font-size: 13px; color: #333; margin-left: 20px;\">\n  <li>✅ BOE</li>\n  <li>✅ BOJA (Andalucía)</li>\n  <li>✅ BORM (Murcia)</li>\n  <li>✅ BOCM (Madrid)</li>\n  <li>✅ DOG (Galicia)</li>\n  <li>⚠️ DOGV (Comunidad Valenciana)</li>\n  <li>⚠️ DOGC (Cataluña)</li>\n  <li>⚠️ DOCM (Castilla-La Mancha)</li>\n  <li>✅ BOCYL (Castilla y León)</li>\n  <li>✅ BOPV (País Vasco)</li>\n  <li>✅ BOIB (Islas Baleares)</li>\n</ul>\n\n<p style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333;\">\n  A continuación se detallan las normas consideradas más relevantes para la actividad del Grupo, con una explicación ampliada de su contenido,\n  del impacto jurídico potencial y de las obligaciones prácticas que pueden derivarse para las distintas áreas implicadas.\n</p>\n\n<hr style=\"border: 0; border-top: 1px solid #cccccc; margin: 20px 0;\">\n\n<!-- Aquí inyectamos el HTML generado -->\n<div style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333; line-height: 1.6;\">\n  {{$json.cuerpo_html}}\n</div>\n\n<hr style=\"border: 0; border-top: 1px solid #cccccc; margin: 20px 0;\">\n\n<h3 style=\"font-family: Arial, sans-serif; color: #003366; margin-bottom: 8px;\">\n  Resumen Ejecutivo (global)\n</h3>\n\n<ul style=\"font-family: Arial, sans-serif; font-size: 13px; color: #333;\">\n  <li><strong>Normas analizadas:</strong> {{$json.total_normas}}</li>\n  <li><strong>Normas relevantes para la actividad:</strong> {{$json.normas_relevantes}}</li>\n  <li><strong>Áreas afectadas:</strong> {{ ($json.areas_afectadas || []).join(', ') }}</li>\n</ul>\n\n<p style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333; margin-top: 12px;\">\n  El resumen ejecutivo incorpora una valoración jurídica extensiva y priorizada de los riesgos y oportunidades detectados,\n  con especial atención a las materias de cumplimiento normativo, contratación, protección de datos y regulación sectorial.\n</p>\n\n<p style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333; margin-top: 20px;\">\n  Si necesita ampliar información sobre alguna de las normas o requiere un análisis específico para un proyecto o sociedad concreta,\n  quedamos a su disposición para profundizar en los aspectos que resulten de mayor interés.\n</p>\n\n<p style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333;\">\n  Atentamente,<br>\n  <strong>Departamento Jurídico</strong><br>\n  Sistema automatizado de alertas normativas\n</p>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1584,
+        192
+      ],
+      "id": "f128bb38-724e-4d28-a9c2-482cc663904a",
+      "name": "Send email",
+      "webhookId": "365ea2dc-7775-473c-a62c-c2424d821e10",
+      "credentials": {
+        "smtp": {
+          "id": "4kUvfaCBAq90daii",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "26402261",
+        "text": "=🔔 *Informe Semanal de Alertas Normativas*\n\n📅 *Período:* {{ $('Generar HTML Informe').item.json.rango_fechas }}\n\n📊 *Resumen:*\n• Normas analizadas: {{ $('Generar HTML Informe').item.json.total_normas }}\n• Normas relevantes: {{ $('Generar HTML Informe').item.json.normas_relevantes }}\n\n{{ $('Generar HTML Informe').item.json.normas_relevantes > 0\n  ? '✅ Se han identificado normas de interés para el Grupo Azarbe.'\n  : '⚪ No hay normas relevantes esta semana.' }}\n\n📧 Informe completo enviado a: mberna@grupoazarbe.com\n",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1056,
+        368
+      ],
+      "id": "19a99339-ea34-4e9f-af2f-5d58427feb5a",
+      "name": "Send a text message",
+      "webhookId": "852675cc-0311-408c-948c-ddc675df3c22",
+      "credentials": {
+        "telegramApi": {
+          "id": "zgQWZHZ2nMs05qtB",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://www.bocm.es/boletines.rss",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        0,
+        320
+      ],
+      "id": "5cc81ea0-48da-454c-8bab-c7ff6494cc9b",
+      "name": "BOCM Madrid"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        320
+      ],
+      "id": "db6ec316-6237-4e46-a946-6a72abdb07cd",
+      "name": "XML2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOCM',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'Madrid',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        320
+      ],
+      "id": "4b663280-970d-460a-b86f-8fbc48b680f1",
+      "name": "BOE Normalizar normas2"
+    },
+    {
+      "parameters": {
+        "url": "https://www.xunta.gal/diario-oficial-galicia/rss/Sumario_es.rss",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        0,
+        496
+      ],
+      "id": "31c0b0f0-1d80-4230-bdc0-ae0d103d27e6",
+      "name": "DOG Galicia"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        496
+      ],
+      "id": "ed949714-abc0-4964-8c82-18758a054a39",
+      "name": "XML3"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'DOG',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'Galicia',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        496
+      ],
+      "id": "c0e9ea1c-4c33-416a-9307-b5b988112f30",
+      "name": "BOE Normalizar normas3"
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// FUSIÓN: Este nodo ahora filtra Y prepara el prompt final.\n// 1. Filtrar normas relevantes (lógica del nodo 'Filtrar Sectores')\nconst normasProcesadas = ($json.normas_procesadas || []);\nconst normasRelevantes = normasProcesadas.filter(n => n.es_relevante === true);\n\n// 2. Preparar datos para el prompt (lógica original de este nodo)\nconst rango = $('Calcular Rango Fechas').first().json;\nconst rangoFechas = `${rango.hace7dias_str} – ${rango.hoy_str}`;\n\nlet listado = normasRelevantes.map(n => \n  `- Título: ${n.titulo || ''}\\n` +\n  `  Fecha: ${n.fecha_publicacion || ''}\\n` +\n  `  Fuente: ${n.fuente || ''} (${n.comunidad || ''})\\n` +\n  `  Enlace: ${n.url || ''}\\n` +\n  `  Texto: ${n.justificacion || (n.texto || '').slice(0, 500)}\\n`\n).join('\\n\\n');\nif (normasRelevantes.length === 0) {\n  listado = 'No se han identificado normas relevantes esta semana.';\n}\n\n// 3. Construir el prompt\nconst prompt = `Actúas como asesor jurídico especializado en normativa española para el Grupo Azarbe... (Tu prompt original va aquí)`; // Prompt original truncado por brevedad\n\n// 4. Devolver datos para los siguientes pasos (LLM y Generador HTML)\nreturn [{\n  json: {\n    prompt,\n    rango_fechas: rangoFechas,\n    total_normas: normasProcesadas.length,\n    // Se pasa la lista completa para que el nodo HTML pueda buscar las URLs\n    normas_relevantes: normasRelevantes,\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1584,
+        32
+      ],
+      "id": "469c5cda-a745-4bc0-8a34-19b4f704c6e0",
+      "name": "Prompt Para Email AI"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst normas = ($json.normas_filtradas || []).flat();\nconst KEYWORDS_POR_COMUNIDAD = {\n  'Comunidad Valenciana (Alicante)': ['restauración','inmobiliario','varadero','fundación','alojamiento turístico','cine'],\n  'Comunidad Valenciana (Castellón)': ['viviendas turísticas','gasolineras','fincas forestales','restauración'],\n  'Castilla-La Mancha': ['abonos','fertilizantes','agricultura','ganadería','agua','rural','vino','bodega','caza','cinegético','envase','plástico','esencia','lavanda','ayudas','coto de caza','animales','aceite','almazara','organización de eventos','alojamientos turísticos'],\n  'Islas Baleares': ['restauración'], 'Cataluña': ['restauración'], 'Madrid': ['restauración'], 'Murcia': ['restauración'], 'Andalucía': ['restauración'], 'País Vasco': ['restauración'], 'Galicia': ['restauración'],\n  'Castilla y León': ['restauración', 'agricultura', 'ganadería', 'industria'],\n  'ESTADO': ['restauración', 'inmobiliario', 'turismo', 'subvenciones', 'ayudas empresas'], 'OTRA': ['restauración', 'inmobiliario']\n};\nconst items = normas.map((norma, index) => {\n  const comunidad = norma.comunidad || 'OTRA';\n  const keywords = KEYWORDS_POR_COMUNIDAD[comunidad] || KEYWORDS_POR_COMUNIDAD['OTRA'];\n  const prompt = `Actúa como un experto analista jurídico para el Grupo Azarbe. Tu objetivo es filtrar normativa y determinar si es RELEVANTE para el negocio.\\n\\nDATOS DE LA NORMA:\\n- Región: ${comunidad}\\n- URL: ${norma.url || 'No disponible'}\\n- Título: ${norma.titulo}\\n- Texto:\\n${norma.texto || ''}\\n\\nCRITERIOS DE RELEVANCIA (Temas clave):\\n${keywords.join(', ')}\\n\\nINSTRUCCIONES:\\n1. Analiza si el contenido afecta a los temas clave.\\n2. Responde SOLO con JSON válido:\\n{\\n  \"es_relevante\": true/false,\\n  \"sector_detectado\": \"Sector principal o NINGUNO\",\\n  \"justificacion\": \"Breve motivo (1 frase)\"\\n}`;\n  return { json: { index, norma_original: norma, prompt_para_ollama: prompt } };\n});\nreturn items;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1056,
+        32
+      ],
+      "id": "27d9bc61-de1f-4bff-b6d9-de32a2f9fd37",
+      "name": "Prompt Para Clasificación AI"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://10.10.10.96:11434/api/chat",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n  {\n    \"model\": \"gemma3:latest\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": $json.prompt_para_ollama\n      }\n    ],\n    \"stream\": false,\n     \"options\": {\n  \"num_predict\": 192,\n  \"temperature\": 0.2,\n  \"top_p\": 0.9\n}\n  }\n}}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 3,
+              "batchInterval": 500
+            }
+          },
+          "timeout": 3600000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1232,
+        32
+      ],
+      "id": "a178c804-f1c4-4e73-9781-c4bf8955335c",
+      "name": "LLM Inference1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const all = [];\n\nfor (const item of items) {\n  const normas = item.json.normas || [];\n  all.push(...normas);\n}\n\nreturn [\n  {\n    json: {\n      normas_filtradas: all,\n    },\n  },\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        864,
+        544
+      ],
+      "id": "74d93882-aeca-46d2-8c56-6319faaf726b",
+      "name": "Merge Normas"
+    },
+    {
+      "parameters": {
+        "numberInputs": 8
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        704,
+        480
+      ],
+      "id": "8fd9afab-f649-42d6-99c1-c103b5fe602e",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst originalItems = $('Prompt Para Clasificación AI').all();\nconst llmItems = $input.all();\nconst normasProcesadas = [];\nllmItems.forEach((item, index) => {\n  const originalJson = originalItems[index] ? originalItems[index].json : {};\n  const norma = originalJson.norma_original || {};\n  const raw = item.json.response || item.json.message?.content || '';\n  try {\n    let jsonText = raw.trim();\n    if (!jsonText.startsWith('{')) {\n       const match = jsonText.match(/\\{[\\s\\S]*\\}/);\n       if (match) jsonText = match[0];\n    }\n    const parsed = JSON.parse(jsonText);\n    normasProcesadas.push({ ...norma, es_relevante: parsed.es_relevante === true, sector: parsed.sector_detectado || 'NINGUNO', justificacion: parsed.justificacion || '' });\n  } catch (e) {\n    normasProcesadas.push({ ...norma, es_relevante: false, sector: 'ERROR_PARSE', justificacion: `Error: ${e.message}` });\n  }\n});\nreturn [{ json: { normas_procesadas: normasProcesadas } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1408,
+        32
+      ],
+      "id": "053d4366-4be1-476e-8d72-50e9ce522d52",
+      "name": "Tratamiento respesta LLM"
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// FUSIÓN: Este nodo ahora parsea la respuesta del LLM Y genera el HTML.\n\n// --- PARTE 1: Limpieza y Parseo (lógica del nodo 'Extract Final Text') ---\nconst llmResponse = $json;\nconst raw = llmResponse.message?.content || '';\nlet jsonText = raw.trim();\n\n// Limpieza robusta de JSON\nconst start = jsonText.indexOf('```');\nconst end = jsonText.lastIndexOf('```');\nif (start !== -1 && end > start) {\n  jsonText = jsonText.slice(start + 3, end).trim();\n  if (jsonText.startsWith('json')) jsonText = jsonText.slice(4).trim();\n}\nif (!jsonText.startsWith('{')) {\n  const match = jsonText.match(/\\{[\\s\\S]*\\}/);\n  if (match) jsonText = match[0];\n}\njsonText = jsonText.replace(/,\\s*\\.\\.\\.\\s*,?/g, '').replace(/\\s*\\.\\.\\.\\s*,?/g, '').replace(/,\\s*([\\}\\]])/g, '$1');\n\nlet parsed;\ntry {\n  parsed = JSON.parse(jsonText);\n} catch (e) {\n  parsed = { asunto: 'Error en Informe', cuerpo: { 'Normas Relevantes': [], 'Conclusiones Generales': { 'Valoración': `Error al parsear JSON: ${e.message}` } } };\n}\n\n// --- PARTE 2: Generación de HTML (lógica original de este nodo) ---\nconst cuerpo = parsed.cuerpo || {};\nconst normasOriginales = $('Prompt Para Email AI').first().json.normas_relevantes || [];\n\nfunction normaliza(str = '') { return String(str).toLowerCase().replace(/\\s+/g, ' ').trim(); }\nfunction buscarUrl(tituloLLM = '') {\n  const tLLM = normaliza(tituloLLM);\n  if (!tLLM) return '';\n  const n = normasOriginales.find(o => {\n    const tOrig = normaliza(o.titulo || '');\n    return tOrig.includes(tLLM) || tLLM.includes(tOrig);\n  });\n  return n?.url || '';\n}\n\nlet html = '';\nconst normasRender = cuerpo['Normas Relevantes'] || [];\nif (Array.isArray(normasRender) && normasRender.length > 0) {\n  html += '<h3>Normas Relevantes</h3>';\n  normasRender.forEach((n, index) => {\n    const enlace = buscarUrl(n['Título']);\n    html += `<div><p><strong>${index + 1}. ${n['Título'] || ''}</strong> ${enlace ? `(<a href=\"${enlace}\">ver norma</a>)` : ''}</p>`;\n    html += `<p><strong>Boletín:</strong> ${n['Boletín y ámbito'] || 'N/A'}</p>`;\n    html += `<p><strong>Explicación:</strong> ${n['Breve explicación'] || 'N/A'}</p></div><hr>`;\n  });\n} else {\n  html += '<p>No se han encontrado normas relevantes en el informe final.</p>';\n}\n\n// --- PARTE 3: Devolver el resultado final ---\nreturn [{\n  json: {\n    cuerpo_html: html,\n    asunto: parsed.asunto || 'Informe Semanal',\n    resumen: parsed.resumen || '',\n    rango_fechas: $('Prompt Para Email AI').first().json.rango_fechas,\n    normas_relevantes: normasOriginales.length\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1408,
+        192
+      ],
+      "id": "53b7e878-ee6a-4550-a7d9-8cd6b3a6ae93",
+      "name": "Generar HTML Informe"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Base: todo lo que viene de Extract Final Text\nconst base = $json;\n\n// Si ya tienes calculadas normas_procesadas en otro nodo, ajústalo aquí.\n// Como ejemplo, asumimos que base.normas_procesadas existe; si no, usa tus campos reales.\nconst normasProcesadas = base.normas_procesadas || [];\nconst total_normas = normasProcesadas.length || (base.total_normas || 0);\n\n// Normas relevantes: por ejemplo, sector distinto de NINGUNO/ERROR_PARSE\nconst normasRelevantes = normasProcesadas.filter(n =>\n  n.sector && n.sector !== 'NINGUNO' && n.sector !== 'ERROR_PARSE',\n);\nconst normas_relevantes = normasRelevantes.length || (base.normas_relevantes || 0);\n\nreturn [{\n  json: {\n    ...base,                 // mantiene asunto, cuerpo, resumen, rango_fechas, areas_afectadas\n    total_normas,\n    normas_relevantes,\n  },\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1248,
+        192
+      ],
+      "id": "a4624628-b3ad-430d-ac97-de50b9cd0998",
+      "name": "Métricas Agregadas"
+    },
+    {
+      "parameters": {
+        "url": "https://bocyl.jcyl.es/rss.do",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        0,
+        688
+      ],
+      "id": "cf2257bd-f332-4b44-9685-4f77b36b9391",
+      "name": "BOCYL CastillaLeon"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        688
+      ],
+      "id": "39ddcc6d-d376-41a4-8495-527c6e15cf90",
+      "name": "XML4"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOCYL',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'Castilla y León',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        688
+      ],
+      "id": "5859bfb2-d477-479d-b2b5-36adfdac15b9",
+      "name": "BOE Normalizar normas4"
+    },
+    {
+      "parameters": {
+        "url": "https://www.euskadi.eus/bopv2/datos/Ultimo.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        16,
+        880
+      ],
+      "id": "6593d7d3-579e-49a7-b421-971f21be951b",
+      "name": "BOPV Pais Vasco"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        880
+      ],
+      "id": "b4063924-48cf-41bb-82e1-7a26ce37f8d8",
+      "name": "XML5"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOPV',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'País Vasco',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        880
+      ],
+      "id": "535ff2c6-02e9-4629-b951-4c330a74cfa1",
+      "name": "BOE Normalizar normas5"
+    },
+    {
+      "parameters": {
+        "url": "https://www.caib.es/eboibfront/indexrss.do?lang=es",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "application/xml,text/xml,application/xhtml+xml,application/html;q=0.9,*/*;q=0.8"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "es-ES,es;q=0.9,en;q=0.8"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        16,
+        1072
+      ],
+      "id": "001482ea-1c53-47c2-9e86-2cb7263a4bc9",
+      "name": "BOIB Islas Baleares"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        1072
+      ],
+      "id": "eedba49f-62e6-4ccd-8010-163cd6e89a72",
+      "name": "XML6"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOIB',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'Islas Baleares',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        1072
+      ],
+      "id": "7562773b-f702-468c-82bd-6095732c592d",
+      "name": "BOE Normalizar normas6"
+    },
+    {
+      "parameters": {
+        "options": {
+          "explicitArray": false,
+          "mergeAttrs": true
+        }
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        208,
+        1232
+      ],
+      "id": "eed0e3ef-227c-4964-97fd-7142fe8aacf6",
+      "name": "XML7"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rss = $json.rss || {};\nconst channel = rss.channel || {};\nlet items = channel.item || [];\n\n// Aseguramos array\nif (!Array.isArray(items)) items = [items];\n\nconst normas = items.map(i => {\nreturn {\nfuente: 'BOJA',\ntitulo: i.title || '',\nfecha_publicacion: i.pubDate || '',\nurl: i.link || '',\ntexto: i.description || '',\ncomunidad: 'Andalucía',\n};\n});\n\nreturn [{ json: { normas } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        1232
+      ],
+      "id": "9eb25446-ceb8-46ca-bb16-8f2f736cb5a4",
+      "name": "BOE Normalizar normas7"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "comedido",
+    "name": "myn8nflows"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-13T11:39:56.427Z",
+      "createdAt": "2025-12-13T11:39:56.427Z",
+      "role": "workflow:owner",
+      "workflowId": "h83A0mENt2e76aep",
+      "projectId": "c1ShJVsgvvl3Rwo1"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-13T12:11:41.000Z",
+  "versionId": "31485bd7-fcc3-472c-810a-e794bc71d734"
+}
